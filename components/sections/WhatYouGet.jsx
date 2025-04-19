@@ -5,7 +5,7 @@
 import SectionTitle from "@/components/global/SectionTitle";
 import Card from "@/components/global/Card";
 
-const WhyParticipate = () => {
+const WhatYouGet = () => {
   const reasons = [
     "Learn from mentors and peers",
     "Network with cool folks",
@@ -27,5 +27,4 @@ const WhyParticipate = () => {
   );
 };
 
-export default WhyParticipate;
-
+export default WhatYouGet;

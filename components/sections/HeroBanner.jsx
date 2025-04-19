@@ -3,7 +3,6 @@
 //add time clock! make component for it if needed in global!
 //no need to make the navbar! 
 import Button from "@/components/global/Button";
-import Tracks from "./Tracks";
 
 const HeroBanner = () => {
   return (

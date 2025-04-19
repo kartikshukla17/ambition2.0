@@ -1,6 +1,7 @@
 // narshima
-//have ti figure out how will each component be showed in an animated way! 
-//probable will have to add new card for this in the elements folder!
+//have to figure out how will each component be showed in an animated way! 
+//import the timeline card 
+//take the arrow from assets folder
 
 import SectionTitle from "@/components/global/SectionTitle";
 import TimelineItem from "@/components/elements/TimelineItem";

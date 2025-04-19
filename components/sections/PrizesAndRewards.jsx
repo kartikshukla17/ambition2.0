@@ -2,6 +2,9 @@
 // just add the content as in the ui for now! 
 //import card title component to use in card!
 //add style component!
+// change this completely for prizes and rewards currently have wriiten perks! 
+//check the ui design and change accordingly 
+
 
 import SectionTitle from "@/components/global/SectionTitle";
 import Card from "@/components/global/Card";
