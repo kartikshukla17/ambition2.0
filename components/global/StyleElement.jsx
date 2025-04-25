@@ -1,4 +1,4 @@
-//anu
+//sana
 //just make a div wiith shadow and round of 8 or more (see the design)
 //import this in each section 
 //for everyone: when using in section just add the src from the assets folder!

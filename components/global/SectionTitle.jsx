@@ -1,29 +1,57 @@
-//sana
-//this is just for the section title tag since all are same type only!
-//for you: add the colors to in figma! 
-//add the shadow!
-//for everyone: to change in each section just the section color same as done in button! instead of color change it to acc to design!
-
-const SectionTitle = ({ title, align = "center", color = "default" }) => {
-    const alignment = align === "left" ? "text-left" : "text-center";
-  
-    const titleColors = {
-      default: "text-black",
-      red: "text-red-500",
-      blue: "text-blue-500",
-      yellow: "text-yellow-500",
-      green: "text-green-500",
-      // Add more as needed based on design
-    };
-
-    return (
-      <div className={`mb-10 ${alignment}`}>
-        <h2 className={`text-3xl font-bold mb-2 ${titleColors[color]}`}>{title}</h2>
-      </div>
-    );
+const SectionTitle = ({
+  title = "HACKATHON TRACKS !!",
+  subtitle = "",
+  align = "left",
+  color = "default",
+  size = "large",
+  highlight = false
+}) => {
+  const titleSizes = {
+    large: "text-3xl",
+    medium: "text-2xl",
+    small: "text-xl"
   };
-  
-  export default SectionTitle;
-  
-  
-  
+
+  return (
+    <div className={`relative text-left ${subtitle ? 'mb-8' : 'mb-4'}`}>
+      <div className="relative inline-block">
+        {highlight && (
+          <>
+            <div className="absolute left-3 top-3 rotate-[5deg] bg-gray-300 h-full w-full px-6 py-2 rounded-sm blur-sm z-0" />
+            <div className="absolute left-2 top-2 rotate-[5deg] bg-zinc-800 h-full w-full px-6 py-2 rounded-sm z-0" />
+          </>
+        )}
+
+        <div
+          className={`relative z-10 ${
+            highlight
+              ? 'rotate-[5deg] bg-orange-500 text-black shadow-lg'
+              : ''
+          } px-6 py-2 font-extrabold tracking-wider ${
+            titleSizes[size]
+          } rounded-sm w-fit transform transition-all duration-300`}
+        >
+          {title}
+        </div>
+      </div>
+
+      {highlight && (
+        <div className="ml-6 mt-2">
+          <img 
+            src="/arrow.png" 
+            alt="arrow"
+            className="w-16 h-auto rotate-45"
+          />
+        </div>
+      )}
+
+      {subtitle && (
+        <p className="text-gray-500 text-base font-medium mt-3">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+};
+
+export default SectionTitle;
