@@ -1,4 +1,4 @@
-// harshita
+// sinchana
 // import sponsor card for displaying logo and all of sponsor and make changes in card component for the outer card 
 
 

@@ -1,4 +1,4 @@
-//harshita 
+//sinchana 
 //for everyone: when importing this button use the vvarient accordingly! rest of the style is same only
 //ex: <Button variant="neon">amBITion</Button>
 // <Button variant="primary">Register</Button>
