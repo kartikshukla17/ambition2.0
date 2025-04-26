@@ -47,6 +47,8 @@ const Countdown = ({ targetDate }) => {
           <div key={label} className="flex flex-col">
             <span className="text-2xl font-bold">{value}</span>
             <span className="text-sm text-gray-500">{label}</span>
+            <div className="bg-red-500 text-white p-4 rounded-lg">Hello Tailwind</div>
+
           </div>
         ))}
       </div>

@@ -8,6 +8,8 @@ import HowToParticipate from "@/components/sections/Sponsors";
 import FAQs from "@/components/sections/FAQs";
 import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
+import './globals.css';
+
 
 export default function Home() {
   return (
