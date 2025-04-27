@@ -5,6 +5,7 @@
 
 import SectionTitle from "@/components/global/SectionTitle";
 import Card from "@/components/global/Card";
+import CardTitle from "@/components/global/CardTitle"; 
 
 const Tracks = () => {
   const tracks = ["Web3", "AI/ML", "Fintech", "Social Good"];
@@ -15,7 +16,7 @@ const Tracks = () => {
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
         {tracks.map((track, idx) => (
           <Card key={idx}>
-            <p className="text-center font-semibold">{track}</p>
+            <CardTitle title="GAME DEV." />
           </Card>
         ))}
       </div>
