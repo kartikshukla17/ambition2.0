@@ -1,4 +1,4 @@
-//harshita
+//sinchana
 //update the tailwind of it  
 
 const SponsorCard = ({ logo, name }) => (
