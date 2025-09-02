@@ -1,13 +1,8 @@
-//chinmayi + ananya!
-//edit according to design!
-//just import it in hero banner for example like this: 
-// <Countdown targetDate="2025-04-24T23:59:59" />
-
-
 "use client";
 import { useEffect, useState } from "react";
 
-const Countdown = ({ targetDate }) => {
+// You can pass the targetDate as a prop from the HeroBanner component
+const Countdown = ({ targetDate = "2025-09-20T09:00:00" }) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {
@@ -36,25 +31,25 @@ const Countdown = ({ targetDate }) => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
+    // Cleanup the interval on component unmount
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]); // Rerun effect if targetDate changes
 
   return (
-    <div className="flex flex-col items-center gap-2 mt-8">
-      <p className="font-semibold text-lg">Time left to Register</p>
-      <div className="flex gap-4 text-center bg-white p-4 rounded-xl shadow-md">
-        {Object.entries(timeLeft).map(([label, value]) => (
-          <div key={label} className="flex flex-col">
-            <span className="text-2xl font-bold">{value}</span>
-            <span className="text-sm text-gray-500">{label}</span>
-            <div className="bg-red-500 text-white p-4 rounded-lg">Hello Tailwind</div>
-
-          </div>
-        ))}
-      </div>
+    // We've removed the outer container and the extra title from the original file
+    // and applied styles directly to this container.
+    <div className="flex gap-4 text-center bg-gray-800 dark:bg-gray-900 text-white p-4 px-6 rounded-xl shadow-lg border border-gray-700">
+      {Object.entries(timeLeft).map(([label, value]) => (
+        <div key={label} className="flex flex-col items-center w-16">
+          {/* Styles for the numbers */}
+          <span className="text-3xl lg:text-4xl font-bold tracking-wider">{value}</span>
+          {/* Styles for the labels */}
+          <span className="text-xs uppercase tracking-widest text-gray-400">{label}</span>
+          {/* The placeholder div has been removed */}
+        </div>
+      ))}
     </div>
   );
 };
 
 export default Countdown;
-

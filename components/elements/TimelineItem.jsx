@@ -1,99 +1,32 @@
-// narshima
+// We no longer need the complex logic for isEven, isLast, etc. from the original file.
+const TimeLineItem = ({ event, isLeft }) => {
+  const { title, date, description } = event;
 
-const TimeLineItem = ({ event, index, isLast }) => {
-  const isEven = index % 2 === 0;
-  const { title, date, description, icon } = event;
+  // Define alignment classes based on the isLeft prop
+  const alignment = isLeft ? "md:text-right" : "md:text-left";
+  const cardPosition = isLeft ? "md:mr-auto" : "md:ml-auto";
+  const pointerPosition = isLeft ? "md:right-0 md:-mr-3" : "md:left-0 md:-ml-3";
 
   return (
-    <div className="timeline-item">
-      {isEven ? (
-        <>
-          {!isLast && ( //  Conditionally render the image
-            <img
-              src="https://s3-alpha-sig.figma.com/img/eeaa/8ba6/bb08a5ec20b7362265d09d90c5e4539c?Expires=1746403200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rv7bd9jPNrl9TvUe5FQQwdSjD5mLFXbCejukmqCIgHlSkH6vvkF~G~c~5WbvZUECy5kxONUbjY3PdVSegzI7laz49Cad14LCofnJhkRzpT3WFuUIIy--t~7JMWvY5hxrwmmIbBNE4eFro8MncSzOB1FRHLBOde2StzxHqHVkW4nb-haHQAPJ5tqSYPkkXiw8SMM28Ukq3NuiIS0k0-~ieT-t~Gs6iy413~Vj6k48~AcxqWqW~SxA9KuA9JNHTy7P9jBk~aNrB83PkXQzBGZrltxUNFihMoK9oqw6ONPP6nblKgEOwxOgnZt7xybv-mDlNU9d60qo6M1WNTOJPxlhyQ__"
-              alt=""
-              style={{
-                width: "186.41px",
-                height: "300.41px",
-                top: "1144px",
-                left: "917.04px",
-                transform: "rotate(29.52deg)",
-                transition: "transform 0.2s ease",
-                borderRadius: "5px",
-                boxShadow: "0 2px 4px rgba(46, 37, 37, 0.2)",
-              }}
-              className="tilt-image"
-            />
-          )}
-          <div className="timeline-item-info">
-            <h3 className="timeline-item-title">{title}</h3>
-            <div className="timeline-item-date">{date}</div>
-            <br />
-            <div className="timeline-item-description">
-              {icon && (
-                <div
-                  className="timeline-item-icon"
-                  style={{
-                    width: "50px",
-                    height: "80px",
-                    fontSize: "40px",
-                    display: "flex",
-                    flexDirection: "row-reverse",
-                  }}
-                >
-                  {icon}
-                </div>
-              )}
-              {description}
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div
-            className="timeline-item-info"
-            style={{ flexGrow: 1, textAlign: "right" }}
-          >
-            <h3 className="timeline-item-title">{title}</h3>
-            <div className="timeline-item-date">{date}</div>
-            <br />
-            <div className="timeline-item-description">
-              {description}
-              {icon && (
-                <div
-                  className="timeline-item-icon"
-                  style={{
-                    width: "50px",
-                    height: "80px",
-                    fontSize: "40px",
-                    display: "flex",
-                    marginLeft: "10px",
-                  }}
-                >
-                  {icon}
-                </div>
-              )}
-            </div>
-          </div>
-          {!isLast && ( // Conditionally render the image
-            <img
-              src="https://s3-alpha-sig.figma.com/img/eeaa/8ba6/bb08a5ec20b7362265d09d90c5e4539c?Expires=1746403200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rv7bd9jPNrl9TvUe5FQQwdSjD5mLFXbCejukmqCIgHlSkH6vvkF~G~c~5WbvZUECy5kxONUbjY3PdVSegzI7laz49Cad14LCofnJhkRzpT3WFuUIIy--t~7JMWvY5hxrwmmIbBNE4eFro8MncSzOB1FRHLBOde2StzxHqHVkW4nb-haHQAPJ5tqSYPkkXiw8SMM28Ukq3NuiIS0k0-~ieT-t~Gs6iy413~Vj6k48~AcxqWqW~SxA9KuA9JNHTy7P9jBk~aNrB83PkXQzBGZrltxUNFihMoK9oqw6ONPP6nblKgEOwxOgnZt7xybv-mDlNU9d60qo6M1WNTOJPxlhyQ__"
-              alt=""
-              style={{
-                width: "186.41px",
-                height: "300.41px",
-                top: "1144px",
-                left: "917.04px",
-                transform: "scaleX(-1) rotate(40deg)",
-                transition: "transform 0.2s ease",
-                borderRadius: "5px",
-                boxShadow: "0 2px 4px rgba(46, 37, 37, 0.2)",
-              }}
-              className="tilt-image"
-            />
-          )}
-        </>
-      )}
+    <div className="flex flex-col md:flex-row items-center w-full">
+      {/* The Timeline Card */}
+      <div className={`w-full md:w-5/12 ${cardPosition}`}>
+        <div className={`bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg ${alignment}`}>
+          <p className="text-purple-500 dark:text-purple-400 font-semibold text-sm mb-1">{date}</p>
+          <h3 className="text-xl font-bold mb-2">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300">{description}</p>
+        </div>
+      </div>
+
+      {/* The Pointer and Dot */}
+      <div className="relative w-full md:w-2/12 flex justify-center">
+        <div className={`absolute top-1/2 h-6 w-6 transform -translate-y-1/2 ${pointerPosition} hidden md:block`}>
+          <div className="w-6 h-6 rounded-full bg-pink-500 border-4 border-white dark:border-gray-800"></div>
+        </div>
+      </div>
+
+      {/* Empty spacer for the other side on desktop */}
+      <div className="w-5/12 hidden md:block"></div>
     </div>
   );
 };

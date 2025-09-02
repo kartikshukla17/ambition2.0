@@ -1,7 +1,7 @@
-//chinmayi + ananya 
-//import button which redirects to registration form (leave blank for now)
-//add time clock! make component for it if needed in global!
-//no need to make the navbar! 
+// chinmayi + ananya
+// import button which redirects to registration form (leave blank for now)
+// add time clock! make component for it if needed in global!
+// no need to make the navbar!
 import Button from "@/components/global/Button";
 import Countdown from "@/components/elements/Countdown";
 
@@ -28,7 +28,8 @@ const HeroBanner = () => {
       {/* Countdown */}
       <div className="mt-10 bg-white px-6 py-4 rounded-2xl shadow-lg z-10">
         <h3 className="text-sm mb-2 text-gray-600">Time left to Register</h3>
-        <Countdown />
+        {/* Pass the targetDate prop to the Countdown component */}
+        <Countdown targetDate="2025-09-20T09:59:59" />
       </div>
 
       {/* Subtext */}

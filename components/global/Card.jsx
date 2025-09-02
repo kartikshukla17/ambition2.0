@@ -1,16 +1,8 @@
-//sinchana
-//make the style like in figma design bgcolor and shadow 
-//make the card flexible enough to add component for sponsor type section also
+import React from 'react';
 
+const Card = ({ children }) => {
+  // A simple div with a very obvious red border for testing
+  return <div style={{ border: '2px solid red', padding: '10px' }}>{children}</div>;
+};
 
-const Card = ({ children, className = "" }) => {
-    return (
-      <div className={`bg-white rounded-2xl shadow-md p-6 ${className}`}>
-        {children}
-      </div>
-    );
-  };
-  
-  export default Card;
-  
-  
+export default Card;
