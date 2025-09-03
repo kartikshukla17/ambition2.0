@@ -1,101 +1,168 @@
+"use client"
+
+import { useRef, useState, useEffect } from "react";
 import SectionTitle from "../global/SectionTitle";
 import TimelineItem from "../elements/TimelineItem";
 
 const TimeLine = () => {
+  const timelineRef = useRef(null);
+  const [activeEvent, setActiveEvent] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  const scrollToTimeline = () => {
+    timelineRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+  const scrollToEvent = (index) => {
+    const eventElement = document.getElementById(`timeline-event-${index}`);
+    if (eventElement) {
+      eventElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setActiveEvent(index);
+    }
+  };
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (timelineRef.current) {
+      observer.observe(timelineRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, []);
+  
   const events = [
     {
-      date: "28 MAY, 10:00 PM",
-      title: "REGISTRATION ENDS",
-      description: "Final deadline for team registration. Make sure all your team members are registered!",
+      date: "16 JAN, 2024",
+      title: "REGISTRATIONS BEGIN",
+      description: "Hack4Soc 2.0, the second iteration of our 24-hour flagship national-level hackathon, is opening its registration. Hurry up! Register soon!",
       icon: "📝",
-      color: "from-red-400 to-pink-500",
-      bgColor: "from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20"
+      color: "bg-purple-400",
+      bgColor: "bg-purple-50",
+      status: "completed"
     },
     {
-      date: "29 MAY, 10:00 AM",
-      title: "WORKSHOPS START",
-      description: "Technical workshops and mentorship sessions begin. Learn from industry experts.",
-      icon: "🎓",
-      color: "from-blue-400 to-cyan-500",
-      bgColor: "from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20"
+      date: "27 JAN, 2024",
+      title: "REGISTRATIONS CLOSE",
+      description: "The registrations are going to be closed on 27th January. Register if you have not already!",
+      icon: "⏰",
+      color: "bg-purple-500",
+      bgColor: "bg-purple-100",
+      status: "completed"
     },
     {
-      date: "30 MAY, 9:00 AM",
-      title: "CHECK-IN STARTS",
-      description: "Arrive at the venue, collect your swag kit, and get ready for an amazing experience.",
-      icon: "🎒",
-      color: "from-green-400 to-emerald-500",
-      bgColor: "from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20"
+      date: "29 JAN, 2024",
+      title: "SHORTLISTING THE BEST TEAMS",
+      description: "Announcing the Shortlisted Teams. Teams shortlisted for the offline event, get ready!",
+      icon: "🎯",
+      color: "bg-purple-600",
+      bgColor: "bg-purple-200",
+      status: "completed"
     },
     {
-      date: "30 MAY, 11:00 AM",
-      title: "OPENING CEREMONY",
-      description: "Official kickoff of amBITion 2.0! Meet fellow participants and get inspired.",
-      icon: "🎉",
-      color: "from-purple-400 to-violet-500",
-      bgColor: "from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20"
+      date: "3-4 FEB, 2024",
+      title: "HACK4SOC 2.0 - THE MAIN EVENT",
+      description: "The main event day! Teams compete for the grand prize! Join us for 24 hours of creation, innovation, & fun at RVCE with over 150 students.",
+      icon: "🚀",
+      color: "bg-purple-700",
+      bgColor: "bg-purple-300",
+      highlight: true,
+      status: "main_event"
     },
     {
-      date: "30 MAY, 12:00 PM",
-      title: "HACKATHON STARTS",
-      description: "Time to code! 24 hours of non-stop innovation, building, and problem-solving begins.",
-      icon: "💻",
-      color: "from-orange-400 to-red-500",
-      bgColor: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20",
-      highlight: true
-    },
-    {
-      date: "31 MAY, 12:00 PM",
-      title: "SUBMISSION & JUDGING",
+      date: "4 FEB, 2024",
+      title: "WINNERS ANNOUNCEMENT",
       description: "Submit your projects and present to our expert panel of judges. Winners announced!",
       icon: "🏆",
-      color: "from-yellow-400 to-orange-500",
-      bgColor: "from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20"
+      color: "bg-purple-800",
+      bgColor: "bg-purple-400",
+      status: "completed"
     },
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900 relative overflow-hidden" id="timeline">
+    <section ref={timelineRef} className="py-20 px-4 bg-purple-50 dark:bg-purple-900 relative overflow-hidden animate-fade-in" id="timeline">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-300 to-purple-400 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-40 left-10 w-24 h-24 bg-gradient-to-br from-pink-300 to-red-400 rounded-2xl transform rotate-45 opacity-30"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-gradient-to-br from-green-300 to-blue-400 rounded-full opacity-25"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-purple-300 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-purple-400 rounded-full opacity-20 animate-bounce"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-200 rounded-full opacity-15 animate-spin"></div>
       </div>
       
       <div className="relative z-10">
         {/* Header section */}
         <div className="text-center mb-12 sm:mb-16 px-4">
-          <div className="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-6 sm:px-8 py-3 rounded-full font-bold text-lg sm:text-xl shadow-lg transform rotate-1 border-3 border-black mb-6 sm:mb-8">
-            📅 EVENT TIMELINE 📅
+          <div className="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 rounded-full font-bold text-lg sm:text-xl shadow-lg transform rotate-1 border-3 border-black mb-6 sm:mb-8">
+            📅 HACK4SOC 2.0 TIMELINE 📅
           </div>
-          <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto px-4">
-            Mark your calendars and get ready for an incredible journey!
+          <p className="text-lg text-purple-600 dark:text-purple-300 max-w-2xl mx-auto leading-relaxed font-medium">
+            Where technology meets humanity - Follow the journey of our 24-hour flagship hackathon!
           </p>
         </div>
         
         <div className="relative max-w-4xl mx-auto px-4">
+          {/* Interactive Navigation Dots */}
+          <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-30 hidden lg:block">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-purple-200 dark:border-purple-600">
+              {events.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => scrollToEvent(index)}
+                  className={`block w-3 h-3 rounded-full mb-2 last:mb-0 transition-all duration-300 hover:scale-125 ${
+                    activeEvent === index 
+                      ? 'bg-purple-600 shadow-lg' 
+                      : 'bg-gray-300 dark:bg-gray-600 hover:bg-purple-400'
+                  }`}
+                  title={events[index].title}
+                />
+              ))}
+            </div>
+          </div>
+          
           {/* Enhanced Vertical Line with gradient and decorative elements - hidden on mobile */}
           <div className="absolute left-1/2 w-1 h-full transform -translate-x-1/2 hidden md:block">
-            <div className="w-full h-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg"></div>
+            <div className={`w-full h-full bg-purple-500 rounded-full shadow-lg transition-all duration-1000 ${
+              isVisible ? 'opacity-60 animate-pulse' : 'opacity-30'
+            }`}></div>
           </div>
+          <div className={`absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-purple-300 h-full z-0 hidden md:block transition-all duration-1000 ${
+            isVisible ? 'animate-pulse' : 'opacity-50'
+          }`}></div>
+          
+          {/* Floating timeline progress indicator */}
+          <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-2 h-2 bg-purple-600 rounded-full shadow-lg animate-bounce hidden md:block z-10"></div>
           
           {/* Timeline Items Container */}
           <div className="space-y-8 sm:space-y-12">
             {events.map((event, index) => (
-              <TimelineItem
+              <div 
                 key={index}
-                event={event}
-                index={index}
-              />
+                id={`timeline-event-${index}`}
+                className="scroll-mt-20"
+                onMouseEnter={() => setActiveEvent(index)}
+              >
+                <TimelineItem
+                  event={event}
+                  index={index}
+                  isActive={activeEvent === index}
+                />
+              </div>
             ))}
           </div>
           
           {/* Call to Action at the bottom */}
           <div className="text-center mt-12 sm:mt-16 px-4">
-            <div className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-lg sm:shadow-2xl border-2 sm:border-4 border-black transform -rotate-1 hover:rotate-0 transition-transform duration-300 min-h-[48px] flex items-center justify-center">
-              🚀 Don't Miss Out - Register Today!
+            <div className="inline-block bg-green-600 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-lg sm:shadow-2xl border-2 sm:border-4 border-black transform -rotate-1 hover:rotate-0 transition-transform duration-300 min-h-[48px] flex items-center justify-center">
+              🏆 Hack4Soc 2.0 - Innovation Complete!
             </div>
+            <p className="text-lg text-purple-600 dark:text-purple-300 mb-8 font-semibold">
+              Thank you to all participants who made this hackathon a success! 🎉
+            </p>
           </div>
         </div>
       </div>

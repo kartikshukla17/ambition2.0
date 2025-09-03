@@ -16,7 +16,7 @@ const WhatIsAmbition = () => {
       <div className="relative z-10">
         {/* Header section */}
         <div className="text-center mb-12">
-          <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg transform rotate-2 border-2 border-black mb-8">
+          <div className="inline-block bg-green-600 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg transform rotate-2 border-2 border-black mb-8">
             what is amBITion ?
           </div>
         </div>

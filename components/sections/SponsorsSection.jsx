@@ -104,7 +104,7 @@ const SponsorsSection = () => {
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold text-xl shadow-lg transform -rotate-2 border-3 border-black mb-8">
+          <div className="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-bold text-xl shadow-lg transform -rotate-2 border-3 border-black mb-8">
             🤝 OUR AMAZING SPONSORS 🤝
           </div>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
@@ -189,7 +189,7 @@ const SponsorsSection = () => {
             Join our amazing sponsors and help us create an unforgettable hackathon experience. 
             Partner with us to reach talented developers and innovators.
           </p>
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 min-h-[48px] flex items-center justify-center mx-auto text-sm sm:text-base">
+          <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 min-h-[48px] flex items-center justify-center mx-auto text-sm sm:text-base">
             Become a Sponsor
           </button>
         </div>

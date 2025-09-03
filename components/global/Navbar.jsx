@@ -6,13 +6,10 @@ import Link from "next/link";
 import { FiMoon, FiSun, FiDownload, FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Tracks", href: "#tracks" },
   { label: "Timeline", href: "#timeline" },
   { label: "Prizes", href: "#prizes" },
-  { label: "Sponsors", href: "#sponsors" },
-  { label: "Participate", href: "#participate" },
   { label: "FAQ", href: "#faqs" },
   { label: "Contact", href: "#contact" },
 ];
@@ -68,15 +65,8 @@ export default function Navbar() {
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 hover:w-full"></div>
             </Link>
           ))}
-          {/* <button
-            onClick={() => window.open('/brochure.pdf', '_blank')}
-            className="ml-2 xl:ml-4 inline-flex items-center text-xs xl:text-sm font-bold uppercase bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-4 xl:px-6 py-2 xl:py-3 rounded-full transition-all duration-300 shadow-lg border-2 xl:border-3 border-black transform hover:scale-110 hover:rotate-1"
-            title="View Brochure PDF"
-          > */}
-            {/* <FiDownload size={14} className="mr-1 xl:mr-2" /> */}
-            {/* <span className="hidden xl:inline">View Brochure</span> */}
-            {/* <span className="xl:hidden">PDF</span> */}
-          {/* </button> */}
+          
+           
         </div>
 
         <button
@@ -104,21 +94,12 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
-          <button
-            onClick={() => {
-              window.open('/brochure.pdf', '_blank');
-              setOpen(false);
-            }}
-            className="block mt-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-4 px-4 uppercase font-bold rounded-lg transition-all duration-300 shadow-lg border-2 border-black text-center transform hover:scale-105 min-h-[48px] flex items-center justify-center"
-            title="View Brochure PDF"
-          >
-            <span className="flex items-center justify-center gap-2">
-              <FiDownload size={18} />
-              <span className="text-base">View Brochure</span>
-            </span>
-          </button>
+          
+            
         </div>
       )}
     </nav>
+
+
   );
 }

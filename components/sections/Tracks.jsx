@@ -52,7 +52,7 @@ const Tracks = () => {
         
         {/* Enhanced header section */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12 px-4">
-          <div className="inline-block bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-base sm:text-lg shadow-lg transform -rotate-2 border-2 border-black">
+          <div className="inline-block bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-base sm:text-lg shadow-lg transform -rotate-2 border-2 border-black">
             HACKATHON TRACKS !!
           </div>
         </div>
@@ -81,7 +81,7 @@ const Tracks = () => {
         
         {/* Call to action button */}
         <div className="text-center mt-8 sm:mt-10 lg:mt-12 px-4">
-          <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-black min-h-[48px] flex items-center justify-center mx-auto">
+          <button className="bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-black min-h-[48px] flex items-center justify-center mx-auto">
             VIEW PROBLEM STATEMENTS
           </button>
         </div>

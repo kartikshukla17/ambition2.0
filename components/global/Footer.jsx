@@ -19,11 +19,11 @@ const Footer = () => {
         <div className="bg-white/70 dark:bg-gray-800/70 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border-2 sm:border-3 border-black backdrop-blur-sm">
           <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-            <h4 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">ADDRESS</h4>
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase text-black dark:text-white">ADDRESS</h4>
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-500 to-green-500 rounded-full"></div>
           </div>
           <div className="bg-gradient-to-r from-gray-50 to-purple-50 dark:from-gray-700 dark:to-purple-800 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border-2 border-purple-200 dark:border-purple-600 mb-4 sm:mb-6">
-            <p className="text-sm sm:text-base leading-relaxed font-semibold text-gray-800 dark:text-gray-200">
+            <p className="text-sm sm:text-base leading-relaxed font-semibold text-black dark:text-white">
               BANGALORE INSTITUTE OF TECHNOLOGY,<br/>
               KRISHNA RAJENDRA RD, PARVATHIPURAM,<br/>
               VISHWESHWARAPURA, BASAVANAGUDI,<br/>
@@ -40,7 +40,7 @@ const Footer = () => {
 
           {/* Enhanced centered quote */}
           <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-800 dark:to-pink-800 p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border-2 sm:border-3 border-black shadow-lg sm:shadow-xl">
-            <p className="text-sm sm:text-base lg:text-xl italic font-black text-center bg-gradient-to-r from-purple-700 to-pink-700 dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-xl italic font-black text-center text-black dark:text-white leading-relaxed">
               " IT'S NOT JUST ABOUT WRITING CODE,<br/>
                 IT'S ABOUT THE EXPERIENCE "
             </p>
@@ -54,7 +54,7 @@ const Footer = () => {
         <div className="bg-white/70 dark:bg-gray-800/70 p-3 sm:p-4 lg:p-4 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border-2 sm:border-3 border-black backdrop-blur-sm">
           <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
-            <h4 className="text-lg sm:text-xl lg:text-2xl font-black uppercase bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">FIND US</h4>
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-black uppercase text-black dark:text-white">FIND US</h4>
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
           </div>
           <div className="rounded-lg sm:rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border-2 sm:border-3 border-black h-48 sm:h-64 lg:h-80 relative">
@@ -83,7 +83,7 @@ const Footer = () => {
           <div className="w-4 sm:w-6 lg:w-8 h-0.5 bg-gradient-to-r from-pink-400 to-transparent"></div>
         </div>
         <div className="bg-white/50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full border-2 border-purple-300 dark:border-purple-600 backdrop-blur-sm inline-block">
-          <p className="text-xs sm:text-sm font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <p className="text-xs sm:text-sm font-bold text-black dark:text-white">
             © {new Date().getFullYear()}, All rights reserved • Made with ❤️ for amBITion
           </p>
         </div>

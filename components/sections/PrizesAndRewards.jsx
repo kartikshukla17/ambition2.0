@@ -82,7 +82,7 @@ const PrizesAndRewards = () => {
       <div className="relative z-10">
         {/* Header section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
-          <div className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-lg sm:text-xl shadow-lg transform -rotate-2 border-2 sm:border-3 border-black mb-6 sm:mb-8">
+          <div className="inline-block bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-lg sm:text-xl shadow-lg transform -rotate-2 border-2 sm:border-3 border-black mb-6 sm:mb-8">
             💰 PRIZES & REWARDS 💰
           </div>
           <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -118,7 +118,7 @@ const PrizesAndRewards = () => {
                   )}
                   
                   <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">{prize.title}</div>
-                  <div className={`text-2xl sm:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 bg-gradient-to-r ${prize.gradient} bg-clip-text text-transparent`}>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black mb-3 sm:mb-4 text-green-600 dark:text-green-400">
                     {prize.amount}
                   </div>
                   <p className="text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300 bg-white/50 dark:bg-gray-800/50 px-2 sm:px-3 py-1 sm:py-2 rounded-lg leading-relaxed">
@@ -162,7 +162,7 @@ const PrizesAndRewards = () => {
         
         {/* Call to Action */}
         <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-4">
-          <div className="inline-block bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-xl sm:shadow-2xl border-2 sm:border-4 border-black transform rotate-1 hover:rotate-0 transition-transform duration-300 min-h-[48px] flex items-center justify-center">
+          <div className="inline-block bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-xl sm:shadow-2xl border-2 sm:border-4 border-black transform rotate-1 hover:rotate-0 transition-transform duration-300 min-h-[48px] flex items-center justify-center">
             🚀 Ready to Win Big? Register Now!
           </div>
         </div>
