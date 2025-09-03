@@ -5,7 +5,7 @@
 
 import SectionTitle from "@/components/global/SectionTitle";
 import Card from "@/components/global/Card";
-import CardTitle from "@/components/global/CardTitle"; 
+import CardTitle from "@/components/global/cardTitle"; 
 
 const Tracks = () => {
   const tracks = [

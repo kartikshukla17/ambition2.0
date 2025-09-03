@@ -28,8 +28,12 @@ export const metadata = {
     title: "Ambition 2.0 - The Ultimate Hackathon Experience",
     description: "Join Ambition 2.0, a premier hackathon featuring multiple tracks and amazing prizes. Register now!",
   },
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
