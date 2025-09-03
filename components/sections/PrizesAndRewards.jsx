@@ -93,7 +93,7 @@ const PrizesAndRewards = () => {
         {/* Prize Pool Header */}
         <div className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <div className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-2xl border-2 sm:border-4 border-black transform rotate-1">
+            <div className="inline-block bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-2xl border-2 sm:border-4 border-black transform rotate-1">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">
                 Total Prize Pool
               </h3>

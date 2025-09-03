@@ -9,7 +9,7 @@ const TimeLineItem = ({ event, index, isActive = false }) => {
       {/* Mobile-first single column layout, desktop alternating layout */}
       {/* Content - always visible on mobile, alternating on desktop */}
       <div className={`w-full ${isLeft ? 'md:w-5/12 md:pr-8' : 'md:w-5/12 md:pl-8 md:order-3'} z-10`}>
-        <div className={`timeline-content group relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl shadow-md sm:shadow-lg md:shadow-2xl hover:shadow-lg sm:hover:shadow-xl md:hover:shadow-3xl transition-all duration-500 border-2 sm:border-3 md:border-4 border-black ${bgColor} ${isLeft ? 'md:text-right' : 'md:text-left'} ${highlight ? 'transform scale-105 ring-2 sm:ring-3 md:ring-4 ring-purple-400' : 'hover:scale-105'} ${status === 'completed' ? 'opacity-90 hover:opacity-100' : ''} ${isActive ? 'ring-4 ring-purple-400 shadow-2xl border-purple-500' : ''} cursor-pointer`}>
+        <div className={`timeline-content group relative overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl shadow-md sm:shadow-lg md:shadow-2xl hover:shadow-lg sm:hover:shadow-xl md:hover:shadow-3xl transition-all duration-500 border-2 sm:border-3 md:border-4 border-black ${bgColor} ${isLeft ? 'md:text-right' : 'md:text-left'} ${highlight ? 'transform scale-105 ring-2 sm:ring-3 md:ring-4 ring-green-400' : 'hover:scale-105'} ${status === 'completed' ? 'opacity-90 hover:opacity-100' : ''} ${isActive ? 'ring-4 ring-green-400 shadow-2xl border-green-500' : ''} cursor-pointer`}>
           
           {/* Animated background overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
@@ -34,7 +34,7 @@ const TimeLineItem = ({ event, index, isActive = false }) => {
               </div>
             </div>
             
-            <h3 className={`text-base sm:text-lg md:text-xl lg:text-2xl font-black mb-2 sm:mb-3 md:mb-4 text-purple-800 dark:text-purple-200`}>
+            <h3 className={`text-base sm:text-lg md:text-xl lg:text-2xl font-black mb-2 sm:mb-3 md:mb-4 text-green-800 dark:text-green-200`}>
               {title}
             </h3>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-medium">{description}</p>
