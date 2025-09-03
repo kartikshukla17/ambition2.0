@@ -24,9 +24,18 @@ const Countdown = ({ targetDate = "2025-09-20T09:00:00" }) => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState({
+    Days: "00",
+    Hours: "00",
+    Minutes: "00",
+    Seconds: "00",
+  });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    setTimeLeft(calculateTimeLeft());
+    
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -35,17 +44,40 @@ const Countdown = ({ targetDate = "2025-09-20T09:00:00" }) => {
     return () => clearInterval(timer);
   }, [targetDate]); // Rerun effect if targetDate changes
 
+  if (!isClient) {
+    return (
+      <div className="flex justify-center items-center gap-4 text-center bg-white p-6 rounded-2xl shadow-2xl border-2 border-gray-200 w-full max-w-2xl mx-auto">
+        {["Days", "Hours", "Minutes", "Seconds"].map((label) => (
+          <div key={label} className="flex flex-col items-center">
+            <div className="bg-white border-2 border-gray-300 rounded-lg p-4 mb-2 shadow-md min-w-[80px]">
+              <span className="text-3xl md:text-4xl font-bold text-black block">
+                00
+              </span>
+            </div>
+            <span className="text-sm uppercase tracking-wide text-gray-600 font-semibold text-center">
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
-    // We've removed the outer container and the extra title from the original file
-    // and applied styles directly to this container.
-    <div className="flex gap-4 text-center bg-gray-800 dark:bg-gray-900 text-white p-4 px-6 rounded-xl shadow-lg border border-gray-700">
+    <div className="flex justify-center items-center gap-4 text-center bg-white p-6 rounded-2xl shadow-2xl border-2 border-gray-200 w-full max-w-2xl mx-auto">
       {Object.entries(timeLeft).map(([label, value]) => (
-        <div key={label} className="flex flex-col items-center w-16">
-          {/* Styles for the numbers */}
-          <span className="text-3xl lg:text-4xl font-bold tracking-wider">{value}</span>
-          {/* Styles for the labels */}
-          <span className="text-xs uppercase tracking-widest text-gray-400">{label}</span>
-          {/* The placeholder div has been removed */}
+        <div key={label} className="flex flex-col items-center">
+          {/* Number container with individual border */}
+          <div className="bg-white border-2 border-gray-300 rounded-lg p-4 mb-2 shadow-md min-w-[80px]">
+            <span className="text-3xl md:text-4xl font-bold text-black block">
+              {value}
+            </span>
+          </div>
+          
+          {/* Label */}
+          <span className="text-sm uppercase tracking-wide text-gray-600 font-semibold text-center">
+            {label}
+          </span>
         </div>
       ))}
     </div>

@@ -1,46 +1,78 @@
-// chinmayi + ananya
-// import button which redirects to registration form (leave blank for now)
-// add time clock! make component for it if needed in global!
-// no need to make the navbar!
 import Button from "@/components/global/Button";
 import Countdown from "@/components/elements/Countdown";
-
 
 const HeroBanner = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden bg-white">
+      
+      {/* Background geometric shapes - matching reference */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Top left red triangular shapes */}
+        <div className="absolute top-20 left-0 w-0 h-0 border-l-[120px] border-l-red-500 border-b-[80px] border-b-transparent"></div>
+        <div className="absolute top-32 left-16 w-0 h-0 border-r-[100px] border-r-red-400 border-t-[60px] border-t-transparent"></div>
+        
+        {/* Left yellow triangular shape */}
+        <div className="absolute top-1/2 left-0 w-0 h-0 border-l-[150px] border-l-yellow-400 border-t-[100px] border-t-transparent"></div>
+        <div className="absolute bottom-32 left-0 w-0 h-0 border-l-[120px] border-l-yellow-500 border-b-[80px] border-b-transparent"></div>
+        
+        {/* Right green diamond */}
+        <div className="absolute top-40 right-20 w-20 h-20 bg-green-400 transform rotate-45"></div>
+        
+        {/* Right orange/red pill shape */}
+        <div className="absolute top-1/2 right-16 w-24 h-12 bg-gradient-to-r from-orange-400 to-red-400 rounded-full transform rotate-12"></div>
+        
+        {/* Bottom right purple triangular shapes */}
+        <div className="absolute bottom-20 right-0 w-0 h-0 border-r-[140px] border-r-purple-500 border-t-[90px] border-t-transparent"></div>
+        <div className="absolute bottom-32 right-20 w-0 h-0 border-l-[80px] border-l-purple-400 border-b-[60px] border-b-transparent"></div>
+        
+        {/* Bottom right blue lightning bolt shape */}
+        <div className="absolute bottom-16 right-32 text-6xl text-blue-500 transform rotate-12">⚡</div>
+      </div>
+
+      
 
       {/* "PRESENTING" */}
-      <h2 className="text-xl md:text-2xl font-medium tracking-widest mb-4 z-10">PRESENTING</h2>
+      <h2 className="text-2xl md:text-3xl font-bold tracking-[0.3em] mb-8 z-10 text-black">PRESENTING</h2>
 
-      {/* amBITion Title */}
-      <div className="transform -rotate-3 bg-lime-300 px-6 py-2 shadow-md relative z-10">
-        <h1 className="text-4xl md:text-5xl font-black text-black">amBITion</h1>
-        <div className="absolute top-1/2 -left-4 transform -translate-y-1/2 w-4 h-4 bg-red-500 border-4 border-black"></div>
-        <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-4 h-4 bg-red-500 border-4 border-black"></div>
+      {/* ambition Title - matching reference exactly */}
+      <div className="relative z-10 mb-8">
+        <div className="bg-lime-400 px-8 py-4 transform -rotate-2 shadow-xl border-4 border-black">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 bg-red-500 border-2 border-black"></div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-black tracking-tight">amBITion</h1>
+            <div className="w-6 h-6 bg-red-500 border-2 border-black"></div>
+          </div>
+        </div>
       </div>
 
       {/* Register Button */}
-      <div className="mt-6 transform rotate-2 inline-block z-10">
-        <Button className="bg-sky-300 px-6 py-2 text-lg font-bold shadow-[3px_3px_0_#000]">REGISTER</Button>
+      <div className="mb-12 z-10">
+        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105">
+          REGISTER
+        </Button>
       </div>
 
-      {/* Countdown */}
-      <div className="mt-10 bg-white px-6 py-4 rounded-2xl shadow-lg z-10">
-        <h3 className="text-sm mb-2 text-gray-600">Time left to Register</h3>
-        {/* Pass the targetDate prop to the Countdown component */}
+      {/* Countdown Timer */}
+      <div className="bg-white rounded-3xl px-12 py-8 shadow-2xl border-2 border-gray-200 z-10 max-w-4xl mx-4 w-full">
+        <h3 className="text-lg font-bold mb-6 text-black text-center">Time left to Register</h3>
         <Countdown targetDate="2025-09-20T09:59:59" />
+        {/* Dots below countdown */}
+        <div className="flex justify-center gap-2 mt-6">
+          <div className="w-3 h-3 bg-blue-900 rounded-full"></div>
+          <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+          <div className="w-3 h-3 bg-blue-900 rounded-full"></div>
+        </div>
       </div>
 
-      {/* Subtext */}
-      <p className="absolute bottom-12 left-6 text-left text-black font-medium z-10">
-        The Ultimate <br /> Hackathon <br /> Experience
-      </p>
+      {/* "The Ultimate Hackathon Experience" - left side */}
+      <div className="absolute bottom-1/3 left-8 text-left z-10">
+        <div className="bg-yellow-300 px-6 py-4 transform -rotate-2 shadow-lg border-2 border-black">
+          <p className="text-black font-bold text-xl leading-tight">
+            The Ultimate<br />Hackathon<br />Experience
+          </p>
+        </div>
+      </div>
 
-      {/* Decorative placeholders */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-red-500 rotate-45 -z-0" />
-      <div className="absolute top-4 right-8 bg-purple-400 text-white px-3 py-1 rounded-md font-semibold text-sm">What's new here? ⬇</div>
-      <div className="absolute bottom-8 right-6 w-24 h-24 bg-purple-500 rotate-45 -z-0" />
     </section>
   );
 };

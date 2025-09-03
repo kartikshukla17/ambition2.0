@@ -13,7 +13,7 @@ const FAQs = () => {
   ];
 
   return (
-    <section className="px-4 py-16 bg-gray-50" id="faqs">
+    <section className="px-4 py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300" id="faqs">
       <SectionTitle title="FAQs" subtitle="Got questions? We've got answers." />
       <div className="max-w-2xl mx-auto space-y-4">
         {faqs.map((faq, idx) => (

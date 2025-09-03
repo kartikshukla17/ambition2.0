@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { FiMoon, FiSun, FiDownload, FiMenu, FiX } from "react-icons/fi";
 
@@ -9,75 +10,77 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Tracks", href: "#tracks" },
   { label: "Timeline", href: "#timeline" },
+  { label: "Prizes", href: "#prizes" },
+  { label: "Sponsors", href: "#sponsors" },
+  { label: "Participate", href: "#participate" },
   { label: "FAQ", href: "#faqs" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    setMounted(true);
   }, []);
 
   const handleThemeToggle = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-black dark:text-white flex items-center gap-4">
+    <nav className="bg-gradient-to-r from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-pink-900 shadow-2xl sticky top-0 z-50 border-b-4 border-black">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between relative">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-10 w-8 h-8 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute top-0 right-20 w-6 h-6 bg-gradient-to-br from-green-300 to-blue-400 rounded-full opacity-30"></div>
+        </div>
+        
+        <div className="text-black dark:text-white flex items-center gap-4 relative z-10">
           <button
             aria-label="Toggle theme"
             onClick={handleThemeToggle}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+            className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg border-2 border-black transform hover:scale-110"
           >
             {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
           </button>
-          <h1 className="text-xl font-bold tracking-tight">
-            am<span className="uppercase">BIT</span>ion
+          <h1 className="text-2xl font-black tracking-tight">
+            <span className="text-black dark:text-white">am</span><span className="uppercase text-green-600 dark:text-green-400">BIT</span><span className="text-black dark:text-white">ion</span>
           </h1>
         </div>
 
         {/* --- DESKTOP LINKS FIX --- */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6 relative z-10">
+          {navLinks.map((link, index) => (
             <Link 
               key={link.href} 
               href={link.href} 
-              // The className is now directly on the Link component
-              className="text-sm font-medium uppercase text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+              className="relative text-xs xl:text-sm font-bold uppercase text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 px-2 xl:px-3 py-2 rounded-lg hover:bg-white/50 dark:hover:bg-gray-800/50 border-2 border-transparent hover:border-purple-300 dark:hover:border-purple-600"
             >
               {link.label}
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 hover:w-full"></div>
             </Link>
           ))}
-          <a
-            href="/brochure.pdf"
-            download
-            className="ml-4 inline-flex items-center text-sm font-medium uppercase bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-full transition"
-          >
-            <FiDownload size={16} className="mr-2" />
-            Brochure
-          </a>
+          {/* <button
+            onClick={() => window.open('/brochure.pdf', '_blank')}
+            className="ml-2 xl:ml-4 inline-flex items-center text-xs xl:text-sm font-bold uppercase bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-4 xl:px-6 py-2 xl:py-3 rounded-full transition-all duration-300 shadow-lg border-2 xl:border-3 border-black transform hover:scale-110 hover:rotate-1"
+            title="View Brochure PDF"
+          > */}
+            {/* <FiDownload size={14} className="mr-1 xl:mr-2" /> */}
+            {/* <span className="hidden xl:inline">View Brochure</span> */}
+            {/* <span className="xl:hidden">PDF</span> */}
+          {/* </button> */}
         </div>
 
         <button
-          className="md:hidden p-2 text-black dark:text-white"
+          className="lg:hidden p-4 text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-2 border-black shadow-lg transform hover:scale-110 transition-all duration-300 relative z-10 min-w-[48px] min-h-[48px] flex items-center justify-center"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -87,24 +90,33 @@ export default function Navbar() {
 
       {/* --- MOBILE MENU FIX --- */}
       {open && (
-        <div className="md:hidden px-6 pb-4 space-y-2">
-          {navLinks.map((link) => (
+        <div className="lg:hidden px-4 pb-6 space-y-2 bg-gradient-to-b from-white to-purple-50 dark:from-gray-900 dark:to-purple-900 border-t-2 border-purple-300 dark:border-purple-600 max-h-screen overflow-y-auto">
+          {navLinks.map((link, index) => (
             <Link 
               key={link.href} 
               href={link.href}
-              // The className is now directly on the Link component
-              className="block text-gray-600 dark:text-gray-300 py-2 uppercase font-medium hover:text-black dark:hover:text-white transition"
+              className="block text-gray-700 dark:text-gray-300 py-4 px-4 uppercase font-bold hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 rounded-lg hover:bg-white/70 dark:hover:bg-gray-800/70 border-2 border-transparent hover:border-purple-300 dark:hover:border-purple-600 min-h-[48px] flex items-center"
+              onClick={() => setOpen(false)}
             >
-              {link.label}
+              <span className="flex items-center gap-3 w-full">
+                <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></span>
+                <span className="text-base">{link.label}</span>
+              </span>
             </Link>
           ))}
-          <a
-            href="/brochure.pdf"
-            download
-            className="block mt-2 text-gray-600 dark:text-gray-300 py-2 uppercase font-medium hover:text-black dark:hover:text-white transition"
+          <button
+            onClick={() => {
+              window.open('/brochure.pdf', '_blank');
+              setOpen(false);
+            }}
+            className="block mt-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-black py-4 px-4 uppercase font-bold rounded-lg transition-all duration-300 shadow-lg border-2 border-black text-center transform hover:scale-105 min-h-[48px] flex items-center justify-center"
+            title="View Brochure PDF"
           >
-            Brochure
-          </a>
+            <span className="flex items-center justify-center gap-2">
+              <FiDownload size={18} />
+              <span className="text-base">View Brochure</span>
+            </span>
+          </button>
         </div>
       )}
     </nav>
