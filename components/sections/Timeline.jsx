@@ -38,50 +38,41 @@ const TimeLine = () => {
   
   const events = [
     {
-      date: "16 JAN, 2024",
-      title: "REGISTRATIONS BEGIN",
-      description: "Ambition 2.0, the second iteration of our 24-hour flagship national-level hackathon, is opening its registration. Hurry up! Register soon!",
-      icon: "📝",
+      date: "2 SEP, 2024",
+      title: "HACKATHON ANNOUNCED",
+      description: "Ambition 2.0 is officially announced! Get ready for an incredible 24-hour hackathon experience. Stay tuned for more details and updates!",
+      icon: "📢",
       color: "bg-green-400",
       bgColor: "bg-green-50",
       status: "completed"
     },
     {
-      date: "27 JAN, 2024",
-      title: "REGISTRATIONS CLOSE",
-      description: "The registrations are going to be closed on 27th January. Register if you have not already!",
-      icon: "⏰",
+      date: "8 SEP, 2024",
+      title: "REGISTRATION BEGINS",
+      description: "Registration is now open! Don't miss your chance to be part of this amazing hackathon. Register your team and secure your spot today!",
+      icon: "📝",
       color: "bg-green-500",
       bgColor: "bg-green-100",
       status: "completed"
     },
     {
-      date: "29 JAN, 2024",
-      title: "SHORTLISTING THE BEST TEAMS",
-      description: "Announcing the Shortlisted Teams. Teams shortlisted for the offline event, get ready!",
-      icon: "🎯",
+      date: "18 SEP, 2024",
+      title: "REGISTRATION CLOSES",
+      description: "Last chance to register! Registration closes today. Make sure you've submitted your team details and are ready for the hackathon!",
+      icon: "⏰",
       color: "bg-green-600",
       bgColor: "bg-green-200",
       status: "completed"
     },
     {
-      date: "3-4 FEB, 2024",
-      title: "AMBITION 2.0 - THE MAIN EVENT",
-      description: "The main event day! Teams compete for the grand prize! Join us for 24 hours of creation, innovation, & fun at BIT with over 150 students.",
+      date: "20 SEP, 2024",
+      title: "HACKING BEGINS",
+      description: "The main event starts! 24 hours of intense coding, innovation, and creativity. Teams will work together to build amazing projects and compete for prizes!",
       icon: "🚀",
       color: "bg-green-700",
       bgColor: "bg-green-300",
       highlight: true,
       status: "main_event"
-    },
-    {
-      date: "4 FEB, 2024",
-      title: "WINNERS ANNOUNCEMENT",
-      description: "Submit your projects and present to our expert panel of judges. Winners announced!",
-      icon: "🏆",
-      color: "bg-green-800",
-      bgColor: "bg-green-400",
-      status: "completed"
     },
   ];
 
@@ -158,10 +149,10 @@ const TimeLine = () => {
           {/* Call to Action at the bottom */}
           <div className="text-center mt-12 sm:mt-16 px-4">
             <div className="inline-block bg-green-600 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-lg sm:shadow-2xl border-2 sm:border-4 border-black transform -rotate-1 hover:rotate-0 transition-transform duration-300 min-h-[48px] flex items-center justify-center">
-              🏆 Ambition 2.0 - Innovation Complete!
+              🚀 Ambition 2.0 - Let's Hack!
             </div>
             <p className="text-lg text-green-600 dark:text-green-300 mb-8 font-semibold">
-              Thank you to all participants who made this hackathon a success! 🎉
+              The hackathon is now live! Teams are building amazing projects! 💻
             </p>
           </div>
         </div>

@@ -63,7 +63,7 @@ const WhatIsAmbition = () => {
                   <div className="space-y-3 ml-8">
                     <div className="flex items-center gap-3">
                       <span className="text-lg">⚡</span>
-                      <span className="text-gray-700 dark:text-gray-300">48 hours of non-stop innovation</span>
+                      <span className="text-gray-700 dark:text-gray-300">24 hours of non-stop innovation</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-lg">👥</span>

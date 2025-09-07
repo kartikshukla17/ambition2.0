@@ -31,66 +31,8 @@ const SponsorsSection = () => {
     </div>
   );
 
-  const sponsors = {
-    platinum: [
-      {
-        name: "Tech Corp",
-        logo: "/sponsors/tech-corp.svg",
-        tier: "platinum"
-      }
-    ],
-    gold: [
-      {
-        name: "Innovation Labs",
-        logo: "/sponsors/innovation-labs.svg",
-        tier: "gold"
-      },
-      {
-        name: "Future Systems",
-        logo: "/sponsors/future-systems.svg",
-        tier: "gold"
-      }
-    ],
-    silver: [
-      {
-        name: "StartupHub",
-        logo: "/sponsors/startup-hub.svg",
-        tier: "silver"
-      },
-      {
-        name: "DevTools Inc",
-        logo: "/sponsors/startup-hub.svg",
-        tier: "silver"
-      },
-      {
-        name: "CloudTech",
-        logo: "/sponsors/startup-hub.svg",
-        tier: "silver"
-      }
-    ],
-    partners: [
-      {
-        name: "Community Partner 1",
-        logo: "/sponsors/community-partner.svg",
-        tier: "default"
-      },
-      {
-        name: "Community Partner 2",
-        logo: "/sponsors/community-partner.svg",
-        tier: "default"
-      },
-      {
-        name: "Community Partner 3",
-        logo: "/sponsors/community-partner.svg",
-        tier: "default"
-      },
-      {
-        name: "Community Partner 4",
-        logo: "/sponsors/community-partner.svg",
-        tier: "default"
-      }
-    ]
-  };
+  // Sponsors array - ready for new sponsors to be added
+  const sponsors = [];
 
   return (
     <section className="px-4 py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-blue-900 dark:via-gray-900 dark:to-purple-900 relative overflow-hidden" id="sponsors">
@@ -112,70 +54,23 @@ const SponsorsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-16">
-          {/* Platinum Sponsors */}
-          {sponsors.platinum.length > 0 && (
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 flex items-center justify-center gap-3">
-                <span className="text-3xl">💎</span>
-                Platinum Sponsors
-                <span className="text-3xl">💎</span>
-              </h3>
-              <div className="flex justify-center">
-                <div className="w-full max-w-md">
-                  {sponsors.platinum.map((sponsor, idx) => (
-                    <SponsorCard key={idx} {...sponsor} />
-                  ))}
-                </div>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Sponsors Grid */}
+          {sponsors.length > 0 ? (
+            <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4">
+              {sponsors.map((sponsor, idx) => (
+                <SponsorCard key={idx} {...sponsor} />
+              ))}
             </div>
-          )}
-
-          {/* Gold Sponsors */}
-          {sponsors.gold.length > 0 && (
-            <div className="text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-6 sm:mb-8 flex items-center justify-center gap-2 sm:gap-3 px-4">
-                <span className="text-xl sm:text-2xl">🥇</span>
-                <span className="text-center">Gold Sponsors</span>
-                <span className="text-xl sm:text-2xl">🥇</span>
+          ) : (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                Coming Soon!
               </h3>
-              <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto px-4">
-                {sponsors.gold.map((sponsor, idx) => (
-                  <SponsorCard key={idx} {...sponsor} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Silver Sponsors */}
-          {sponsors.silver.length > 0 && (
-            <div className="text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-6 sm:mb-8 flex items-center justify-center gap-2 sm:gap-3 px-4">
-                <span className="text-xl sm:text-2xl">🥈</span>
-                <span className="text-center">Silver Sponsors</span>
-                <span className="text-xl sm:text-2xl">🥈</span>
-              </h3>
-              <div className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto px-4">
-                {sponsors.silver.map((sponsor, idx) => (
-                  <SponsorCard key={idx} {...sponsor} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Community Partners */}
-          {sponsors.partners.length > 0 && (
-            <div className="text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-200 mb-6 sm:mb-8 flex items-center justify-center gap-2 sm:gap-3 px-4">
-                <span className="text-xl sm:text-2xl">🤝</span>
-                <span className="text-center">Community Partners</span>
-                <span className="text-xl sm:text-2xl">🤝</span>
-              </h3>
-              <div className="grid gap-3 sm:gap-4 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 max-w-4xl mx-auto px-4">
-                {sponsors.partners.map((sponsor, idx) => (
-                  <SponsorCard key={idx} {...sponsor} />
-                ))}
-              </div>
+              <p className="text-gray-600 dark:text-gray-400">
+                We're working on bringing you amazing sponsors.
+              </p>
             </div>
           )}
         </div>
