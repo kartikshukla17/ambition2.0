@@ -26,15 +26,20 @@ const WhatIsAmbition = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
               {/* Cartoon character placeholder */}
-              <div className="w-80 h-80 bg-gradient-to-br from-orange-200 to-red-300 dark:from-orange-800 dark:to-red-900 rounded-3xl flex items-center justify-center shadow-2xl border-4 border-black transform hover:rotate-3 transition-transform duration-300">
-                <div className="text-center">
-                  {/* Simple robot character using emojis and shapes */}
-                  <div className="text-8xl mb-4">🤖</div>
-                  <div className="bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm border-2 border-black">
-                    amBITion
-                  </div>
-                </div>
-              </div>
+              <div className="w-80 h-80 bg-gradient-to-br from-green-200 to-emerald-300 dark:from-green-800 dark:to-emerald-900 rounded-3xl flex items-center justify-center shadow-2xl border-4 border-black transform hover:rotate-3 transition-transform duration-300 overflow-hidden relative">
+                 <iframe 
+                    src="https://my.spline.design/superkidrobotcopy-ouieIINbYt0SGXii3mDfWCML/?hideControls=true&hideWatermark=true" 
+                    frameBorder="0" 
+                    width="100%" 
+                    height="100%"
+                    className="rounded-2xl"
+                    style={{
+                      filter: 'none',
+                      transform: 'scale(1.05)',
+                      transformOrigin: 'center'
+                    }}
+                  ></iframe>
+               </div>
               
               {/* Decorative elements around character */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full border-2 border-black animate-bounce"></div>
