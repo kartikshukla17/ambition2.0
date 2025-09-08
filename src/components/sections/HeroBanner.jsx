@@ -1,7 +1,6 @@
 "use client";
 import Button from "@/components/global/Button";
 import Countdown from "@/components/elements/Countdown";
-import { redirect, RedirectType } from "next/navigation";
 
 const HeroBanner = () => {
   return (
@@ -52,7 +51,7 @@ const HeroBanner = () => {
       {/* Register Button */}
 
       <div className="mb-12 z-10">
-        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => { redirect("https://tally.so/r/wgBdR1", RedirectType.push) }}>
+        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => { window.open("https://tally.so/r/wgBdR1", "_blank") }}>
           Register
         </Button>
       </div>
