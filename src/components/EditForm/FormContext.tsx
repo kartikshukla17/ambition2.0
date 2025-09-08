@@ -3,16 +3,18 @@ import React, { createContext, useContext, useState } from 'react';
 
 interface StudentData {
   name: string;
-  email:string;
+  email: string;
   usn: string;
-  photoURL: string|null;
+  photoURL: string | null;
   branch: string;
   year: number;
   tags: string[];
   about: string;
-  linkedin: string |null;
-  github: string |null;
-  instagram: string |null;
+  linkedin: string | null;
+  github: string | null;
+  instagram: string | null;
+  college: string;
+  collegeEmail: string | null;
 }
 
 interface FormContextType {
