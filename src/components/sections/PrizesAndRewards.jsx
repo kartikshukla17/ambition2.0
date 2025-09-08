@@ -80,6 +80,7 @@ const PrizesAndRewards = () => {
       </div>
       
       <div className="relative z-10">
+      </div>
         {/* Header section */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
           <div className="inline-block bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-full font-bold text-lg sm:text-xl shadow-lg transform -rotate-2 border-2 sm:border-3 border-black mb-6 sm:mb-8">
@@ -98,13 +99,14 @@ const PrizesAndRewards = () => {
                 Total Prize Pool
               </h3>
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-yellow-300">
-                ₹1,15,000+
+                ₹2,00,000+
               </div>
             </div>
           </div>
+        
           
           {/* Prize Cards */}
-          <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {/* <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {prizes.map((prize, idx) => (
               <div key={idx} className={`relative ${prize.highlight ? 'sm:transform sm:-rotate-2 sm:scale-105' : ''}`}>
                 <Card 
@@ -131,7 +133,7 @@ const PrizesAndRewards = () => {
         </div>
 
         {/* Perks Section */}
-        <div className="max-w-6xl mx-auto px-4">
+        {/* <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8 sm:mb-10 lg:mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-3 sm:mb-4">
               🎁 What You Get Beyond Prizes
@@ -158,7 +160,7 @@ const PrizesAndRewards = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */} 
         
         {/* Call to Action */}
         <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-4">

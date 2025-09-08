@@ -11,7 +11,7 @@ const HowToParticipate = () => {
     { 
       number: 2, 
       title: "Choose a Track", 
-      description: "Pick from Web3, AI/ML, Fintech, or Social Good. Choose the category that aligns with your passion and expertise." 
+      description: "Pick from Web3, AI/ML, Open Innovation, or IoT. Choose the category that aligns with your passion and expertise." 
     },
     { 
       number: 3, 

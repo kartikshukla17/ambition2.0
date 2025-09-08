@@ -23,20 +23,21 @@ const Tracks = () => {
       gradient: "from-green-400 to-blue-600",
       bgColor: "from-green-50 to-blue-50 dark:from-green-900 dark:to-blue-900"
     },
-    { 
-      name: "Fintech", 
-      description: "Financial Technology Solutions",
-      icon: "💰",
-      gradient: "from-yellow-400 to-orange-600",
-      bgColor: "from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-orange-900"
-    },
-    { 
-      name: "Social Good", 
-      description: "Technology for Social Impact",
-      icon: "🌱",
-      gradient: "from-pink-400 to-red-600",
-      bgColor: "from-pink-50 to-red-50 dark:from-pink-900 dark:to-red-900"
-    }
+    {
+  name: "Open Innovation",
+  description: "Driving collaborative financial innovations for the future.",
+  icon: "💰",
+  gradient: "from-yellow-400 to-orange-600",
+  bgColor: "from-yellow-50 to-orange-50 dark:from-yellow-900 dark:to-orange-900"
+},
+{
+  name: "IoT and Cyber Security",
+  description: "Securing connected devices with cutting-edge IoT and cyber protection.",
+  icon: "🔒",
+  gradient: "from-pink-400 to-red-600",
+  bgColor: "from-pink-50 to-red-50 dark:from-pink-900 dark:to-red-900"
+}
+
   ];
 
   return (
@@ -79,12 +80,7 @@ const Tracks = () => {
           ))}
         </div>
         
-        {/* Call to action button */}
-        <div className="text-center mt-8 sm:mt-10 lg:mt-12 px-4">
-          <button className="bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base lg:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-black min-h-[48px] flex items-center justify-center mx-auto">
-            VIEW PROBLEM STATEMENTS
-          </button>
-        </div>
+        
       </div>
     </section>
   );
