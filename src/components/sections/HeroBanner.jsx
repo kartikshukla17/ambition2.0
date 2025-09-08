@@ -1,62 +1,9 @@
+"use client";
 import Button from "@/components/global/Button";
 import Countdown from "@/components/elements/Countdown";
-import { auth } from "@/auth";
-import { redirect } from "next/navigation";
-import db from "@/lib/db";
-import Link from "next/link";
+import { redirect, RedirectType } from "next/navigation";
 
-const RegisterButtonOld = async () => {
-  const session = await auth();
-  const currentProfile = await db.profile.findUnique({
-    where: { email: session?.user?.email ?? undefined }
-  })
-  if (!session || !currentProfile) {
-    return <div className="mb-12 z-10">
-      <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => { redirect("/profile") }}>
-        Register
-      </Button>
-    </div>
-
-  }
-  <div className="mb-12 z-10">
-    <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => { redirect("/team") }}>
-      TEAM
-    </Button>
-  </div>
-
-
-
-}
-const RegisterButton = async () => {
-  const session = await auth();
-
-  const currentProfile = session?.user?.email
-    ? await db.profile.findUnique({
-      where: { email: session.user.email },
-    })
-    : null;
-
-  if (!session || !currentProfile) {
-    return (
-      <Link
-        className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105"
-        href="/profile"
-      >
-        REGISTER
-      </Link>
-    );
-  }
-
-  return (
-    <Link
-      href="/team"
-      className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105">
-      TEAM
-    </Link>
-  );
-};
-
-const HeroBanner = async () => {
+const HeroBanner = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
 
@@ -105,7 +52,9 @@ const HeroBanner = async () => {
       {/* Register Button */}
 
       <div className="mb-12 z-10">
-        {await RegisterButton()}
+        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => { redirect("https://tally.so/r/wgBdR1", RedirectType.push) }}>
+          Register
+        </Button>
       </div>
       {/* Countdown Timer */}
       <div className="bg-white dark:bg-gray-800 rounded-3xl px-12 py-8 shadow-2xl border-2 border-gray-200 dark:border-gray-600 z-10 max-w-4xl mx-4 w-full">
