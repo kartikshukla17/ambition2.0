@@ -7,7 +7,10 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { ProgressBar } from '../ui/ProgressBar';
 import { ToastContainer, toast } from 'react-toastify';
 import { val } from '../validate';
-
+interface Result{
+  result:boolean;
+  message:string;
+}
 export const FormSteps: React.FC = () => {
   const { step, setStep, isLastStep, data } = useFormContext();
   const isValid = true;
@@ -36,8 +39,7 @@ export const FormSteps: React.FC = () => {
     if (validateStep()) {
       if (step === 1) {
         try {
-          // Assuming val is an async server component function
-          const result = await val(data);
+          const result:Result = await val(data);
           if (result?.result) {
             toast.success(result?.message);
             setStep(2);

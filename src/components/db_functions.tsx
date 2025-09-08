@@ -77,7 +77,7 @@ export async function createStudentData(data: StudentData, paymentURL: string) {
       paymentURL: paymentURL
     },
   });
-  return { result: true, redirect_url: paymentURL }
+  return { result: true, message: "Profile Created!" }
 };
 export async function isPaymentDone() {
   const session = await auth();

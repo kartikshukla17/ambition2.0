@@ -1,6 +1,5 @@
-import AdminPanel from "@/components/AdminPannel/Admin"
 
 const HomePage = async () => {
-    return <AdminPanel/>
+  return <h1>Hello World</h1>
 }
 export default HomePage;

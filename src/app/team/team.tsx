@@ -65,7 +65,7 @@ export default function TeamPage() {
       } else {
         setError(data.error || "Failed to create team.");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -97,7 +97,7 @@ export default function TeamPage() {
       } else {
         setError(data.error || "Failed to join team.");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -133,7 +133,7 @@ export default function TeamPage() {
       } else {
         setError(data.error || "Failed to leave the team.");
       }
-    } catch (err) {
+    } catch {
       setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -176,7 +176,7 @@ export default function TeamPage() {
           <div className="space-y-6">
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
-                You're in a Team!
+                You&apos;re in a Team!
               </h3>
               <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
                 Your Team Code:{" "}

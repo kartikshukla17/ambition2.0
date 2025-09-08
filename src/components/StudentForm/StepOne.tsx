@@ -20,7 +20,7 @@ export const StepOne: React.FC = () => {
 
       <Input
         label="College Email"
-        value={data.collegeEmail}
+        value={data.collegeEmail ?? undefined}
         onChange={(e) => setData(prev => ({ ...prev, collegeEmail: e.target.value }))}
         required
         placeholder=""

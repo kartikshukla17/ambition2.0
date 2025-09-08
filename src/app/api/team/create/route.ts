@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+export async function POST() {
   const session = await auth();
   if (!session || !session.user?.email) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
