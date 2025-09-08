@@ -8,7 +8,7 @@ export const StepTwo: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(true);
   const [paymentURL, setPaymentUrl] = useState<string | null>(null);
   const checkPayment = () => {
-    isPaymentDone(data).then((isDone) => {
+    isPaymentDone().then((isDone) => {
       if (isDone) {
         setIsProcessing(false);
         redirect("/team", RedirectType.push);

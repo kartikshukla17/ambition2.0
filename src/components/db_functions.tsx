@@ -79,9 +79,12 @@ export async function createStudentData(data: StudentData, paymentURL: string) {
   });
   return { result: true, redirect_url: paymentURL }
 };
-export async function isPaymentDone(data: StudentData) {
+export async function isPaymentDone() {
+  const session = await auth();
+  if (!session || !session.user) return false;
+
   const existingUser = await db.profile.findUnique({
-    where: { email: data.email || undefined },
+    where: { email: session.user?.email || undefined },
   });
   if (existingUser) {
     return existingUser.paymentDone;
