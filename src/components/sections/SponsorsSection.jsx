@@ -16,7 +16,7 @@ const SponsorsSection = () => {
           <h4 className="font-bold text-base sm:text-lg text-gray-800 dark:text-gray-200 mb-1 sm:mb-2">{name}</h4>
           <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed">{description}</p>
         </div>
-        {website && (
+        {/* {website && (
           <a 
             href={website} 
             target="_blank" 
@@ -26,13 +26,38 @@ const SponsorsSection = () => {
             Visit Website
             <ExternalLink className="w-3 sm:w-4 h-3 sm:h-4" />
           </a>
-        )}
+        )} */}
       </div>
     </div>
   );
 
   // Sponsors array - ready for new sponsors to be added
-  const sponsors = [];
+  const sponsors = [
+    {
+      name: "Core",
+      logo: "/core.webp",
+      description: "Leading blockchain infrastructure platform powering the next generation of decentralized applications.",
+      website: "https://core.app"
+    },
+    {
+      name: "RiseIn",
+      logo: "/risein.jpg",
+      description: "Empowering the next generation of entrepreneurs and innovators through education and mentorship.",
+      website: "https://risein.com"
+    },
+    {
+      name: "Algorand",
+      logo: "/algorand.jpg",
+      description: "Pure proof-of-stake blockchain platform designed for the future of finance and decentralized applications.",
+      website: "https://algorand.com"
+    },
+    {
+      name: "Codemania",
+      logo: "/codemania.png",
+      description: "Premier coding competition platform fostering innovation and technical excellence among developers.",
+      website: "https://codemania.io"
+    }
+  ];
 
   return (
     <section className="px-4 py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-blue-900 dark:via-gray-900 dark:to-purple-900 relative overflow-hidden" id="sponsors">

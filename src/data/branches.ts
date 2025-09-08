@@ -6,7 +6,7 @@ export interface StudentData {
   name: string;
   email: string;
   photoURL: string | null;
+  college: string;
   collegeEmail: string | null;
-  college: College | string;
 };
 export type College = typeof Colleges[number];

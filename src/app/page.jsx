@@ -3,6 +3,7 @@ import WhatIsAmbition from "@/components/sections/WhatIsAmbition";
 import Tracks from "@/components/sections/Tracks";
 import Timeline from "@/components/sections/Timeline";
 import Perks from "@/components/sections/PrizesAndRewards";
+import Gallery from "@/components/sections/Gallery";
 import SponsorsSection from "@/components/sections/SponsorsSection";
 import HowToParticipate from "@/components/sections/Sponsors";
 import FAQs from "@/components/sections/FAQs";
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
       <section id="prizes">
         <Perks />
+      </section>
+      <section id="gallery">
+        <Gallery />
       </section>
       <section id="sponsors">
         <SponsorsSection />

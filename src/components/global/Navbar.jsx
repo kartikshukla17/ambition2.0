@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 import Link from "next/link";
-import { FiMoon, FiSun, FiDownload, FiMenu, FiX, FiLogOut } from "react-icons/fi";
+import Image from "next/image";
+import { FiDownload, FiMenu, FiX, FiLogOut } from "react-icons/fi";
 import { useSession, signOut } from "next-auth/react";
 
 const navLinks = [
@@ -17,21 +17,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const { data: session } = useSession();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const handleThemeToggle = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <nav className="bg-gradient-to-r from-white via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-pink-900 shadow-2xl sticky top-0 z-50 border-b-4 border-black">
@@ -43,13 +29,13 @@ export default function Navbar() {
         </div>
 
         <div className="text-black dark:text-white flex items-center gap-4 relative z-10">
-          <button
-            aria-label="Toggle theme"
-            onClick={handleThemeToggle}
-            className="p-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg border-2 border-black transform hover:scale-110"
-          >
-            {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
-          </button>
+          <Image
+            src="/BIT.png"
+            alt="BIT Logo"
+            width={32}
+            height={32}
+            className="object-contain"
+          />
           <h1 className="text-2xl font-black tracking-tight">
             <span className="text-black dark:text-white">am</span><span className="uppercase text-green-600 dark:text-green-400">BIT</span><span className="text-black dark:text-white">ion</span>
           </h1>
@@ -67,6 +53,14 @@ export default function Navbar() {
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 hover:w-full"></div>
             </Link>
           ))}
+          {/* Terms & Conditions Button */}
+          <button
+            onClick={() => window.open('https://docs.google.com/document/d/1KMGnaIchn6xyPBzXjL0lblFrVW9rbbDTEErrs6-_YpU/edit?usp=sharing', '_blank')}
+            className="relative text-xs xl:text-sm font-bold uppercase text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 px-2 xl:px-3 py-2 rounded-lg hover:bg-white/50 dark:hover:bg-gray-800/50 border-2 border-transparent hover:border-purple-300 dark:hover:border-purple-600"
+          >
+            T&C
+            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 hover:w-full"></div>
+          </button>
           {session && (
             <button
               onClick={() => signOut({ callbackUrl: '/', redirect: false })}
@@ -103,6 +97,19 @@ export default function Navbar() {
               </span>
             </Link>
           ))}
+          {/* Terms & Conditions Button for Mobile */}
+          <button
+            onClick={() => {
+              window.open('https://docs.google.com/document/d/1KMGnaIchn6xyPBzXjL0lblFrVW9rbbDTEErrs6-_YpU/edit?usp=sharing', '_blank');
+              setOpen(false);
+            }}
+            className="w-full text-left text-gray-700 dark:text-gray-300 py-4 px-4 uppercase font-bold hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 rounded-lg hover:bg-white/70 dark:hover:bg-gray-800/70 border-2 border-transparent hover:border-purple-300 dark:hover:border-purple-600 min-h-[48px] flex items-center"
+          >
+            <span className="flex items-center gap-3 w-full">
+              <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></span>
+              <span className="text-base">Terms & Conditions</span>
+            </span>
+          </button>
           {session && (
             <button
               onClick={() => {

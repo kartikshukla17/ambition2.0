@@ -3,6 +3,7 @@
 //leave a space for adding that cartoon character! 
 import SectionTitle from "@/components/global/SectionTitle";
 import Card from "@/components/global/Card";
+import Image from "next/image";
 
 const WhatIsAmbition = () => {
   return (
@@ -27,18 +28,18 @@ const WhatIsAmbition = () => {
             <div className="relative">
               {/* Cartoon character placeholder */}
               <div className="w-80 h-80 bg-gradient-to-br from-green-200 to-emerald-300 dark:from-green-800 dark:to-emerald-900 rounded-3xl flex items-center justify-center shadow-2xl border-4 border-black transform hover:rotate-3 transition-transform duration-300 overflow-hidden relative">
-                 <iframe 
-                    src="https://my.spline.design/superkidrobotcopy-ouieIINbYt0SGXii3mDfWCML/?hideControls=true&hideWatermark=true" 
-                    frameBorder="0" 
-                    width="100%" 
-                    height="100%"
-                    className="rounded-2xl"
+                 <Image 
+                    src="/ambition.png"
+                    alt="Ambition Logo"
+                    width={320}
+                    height={320}
+                    className="rounded-2xl object-contain"
                     style={{
                       filter: 'none',
                       transform: 'scale(1.05)',
                       transformOrigin: 'center'
                     }}
-                  ></iframe>
+                  />
                </div>
               
               {/* Decorative elements around character */}
