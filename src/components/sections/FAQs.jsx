@@ -8,8 +8,10 @@ import FAQItem from "@/components/elements/FAQItem";
 const FAQs = () => {
   const faqs = [
     { question: "Is this hackathon online?", answer: "Nope! It’s fully offline at our campus." },
-    { question: "Can I participate solo?", answer: "Yes! You can work solo or in a team." },
+    { question: "Can I participate solo?", answer: "No! You can only work in a team." },
     { question: "What should I bring?", answer: "Laptop, charger, ID, and your A-game." },
+    { question: "Is there a team size limit?", answer: "Yes, each team must have 3-4 members." },
+    
   ];
 
   return (

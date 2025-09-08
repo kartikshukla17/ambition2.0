@@ -99,7 +99,7 @@ const PrizesAndRewards = () => {
                 Total Prize Pool
               </h3>
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-yellow-300">
-                ₹2,00,000+
+                ₹6,00,000+
               </div>
             </div>
           </div>
