@@ -1,7 +1,24 @@
+"use client";
 import SectionTitle from "@/components/global/SectionTitle";
 import { ExternalLink } from "lucide-react";
 
 const SponsorsSection = () => {
+  // Function to handle sponsor button click
+  const handleSponsorClick = () => {
+    try {
+      // Open the Google Drive sponsor information in a new tab
+      window.open('https://drive.google.com/file/d/1nfxkTfgZeniPlPNo9ueX0kM22PTh76uz/view?usp=sharing', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Error opening sponsor information:', error);
+      // Fallback: try to navigate to the link directly
+      try {
+        window.location.href = 'https://drive.google.com/file/d/1nfxkTfgZeniPlPNo9ueX0kM22PTh76uz/view?usp=sharing';
+      } catch (fallbackError) {
+        console.error('Fallback error:', fallbackError);
+        alert('Unable to open the sponsor information. Please contact us directly.');
+      }
+    }
+  };
   const SponsorCard = ({ name, logo, description, website }) => (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-200 dark:border-gray-700 group hover:scale-105">
       <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
@@ -109,7 +126,10 @@ const SponsorsSection = () => {
             Join our amazing sponsors and help us create an unforgettable hackathon experience. 
             Partner with us to reach talented developers and innovators.
           </p>
-          <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 min-h-[48px] flex items-center justify-center mx-auto text-sm sm:text-base">
+          <button 
+            onClick={handleSponsorClick}
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 min-h-[48px] flex items-center justify-center mx-auto text-sm sm:text-base"
+          >
             Become a Sponsor
           </button>
         </div>
