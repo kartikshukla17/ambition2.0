@@ -38,7 +38,7 @@ const TimeLine = () => {
   
   const events = [
     {
-      date: "2 SEP, 2024",
+      date: "2 SEP, 2025",
       title: "HACKATHON ANNOUNCED",
       description: "Ambition 2.0 is officially announced! Get ready for an incredible 24-hour hackathon experience. Stay tuned for more details and updates!",
       icon: "📢",
