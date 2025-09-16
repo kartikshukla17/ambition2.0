@@ -13,12 +13,7 @@ const TimeLineItem = ({ event, index, isActive = false }) => {
           
           {/* Animated background overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-          {/* Highlight Badge */}
-          {highlight && (
-            <div className={`absolute -top-2 sm:-top-3 ${isLeft ? '-right-2 sm:-right-3' : '-left-2 sm:-left-3'} bg-green-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs font-black border-2 border-black transform ${isLeft ? 'rotate-12' : '-rotate-12'} shadow-lg`}>
-              🔥 MAIN EVENT!
-            </div>
-          )}
+          
           
             {/* Arrow pointer for desktop - pointing right */}
             {isLeft && (
@@ -29,7 +24,7 @@ const TimeLineItem = ({ event, index, isActive = false }) => {
               {/* Icon and Date Header */}
               <div className={`flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4 ${isLeft ? 'md:flex-row-reverse' : ''}`}>
               <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">{icon}</div>
-              <div className={`${color} text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-bold border-2 border-black shadow-lg`}>
+              <div className={`${color} text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-xs sm:text-sm font-bold border-2 border-black shadow-lg whitespace-nowrap`}>
                 {date}
               </div>
             </div>

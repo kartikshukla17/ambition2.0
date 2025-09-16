@@ -48,6 +48,15 @@ const HeroBanner = () => {
         </div>
       </div>
 
+      {/* Event Date */}
+      <div className="relative z-10 mb-8">
+        <div className="bg-purple-500 dark:bg-purple-600 px-6 sm:px-8 py-3 sm:py-4 transform rotate-1 shadow-lg border-3 border-black dark:border-white rounded-lg">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-wide">
+            04-05 OCT 2025
+          </h2>
+        </div>
+      </div>
+
       {/* Register Button */}
 
       <div className="mb-12 z-10">
@@ -58,7 +67,7 @@ const HeroBanner = () => {
       {/* Countdown Timer */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl px-2 sm:px-6 md:px-12 py-4 sm:py-6 md:py-8 shadow-2xl border-2 border-gray-200 dark:border-gray-600 z-10 max-w-sm sm:max-w-2xl md:max-w-4xl mx-2 sm:mx-4 w-full">
         <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-black dark:text-white text-center">Time left to Register</h3>
-        <Countdown targetDate="2025-09-20T09:59:59" />
+        <Countdown targetDate="2025-10-04T09:59:59" />
         {/* Dots below countdown */}
         <div className="flex justify-center gap-2 mt-4 sm:mt-6">
           <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-900 rounded-full"></div>

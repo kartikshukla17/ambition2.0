@@ -38,42 +38,70 @@ const TimeLine = () => {
   
   const events = [
     {
-      date: "2 SEP, 2024",
-      title: "HACKATHON ANNOUNCED",
-      description: "Ambition 2.0 is officially announced! Get ready for an incredible 24-hour hackathon experience. Stay tuned for more details and updates!",
-      icon: "📢",
-      color: "bg-green-400",
-      bgColor: "bg-green-50",
-      status: "completed"
-    },
-    {
-      date: "8 SEP, 2024",
-      title: "REGISTRATION BEGINS",
-      description: "Registration is now open! Don't miss your chance to be part of this amazing hackathon. Register your team and secure your spot today!",
-      icon: "📝",
-      color: "bg-green-500",
-      bgColor: "bg-green-100",
-      status: "completed"
-    },
-    {
-      date: "18 SEP, 2024",
+      date: "2 OCT, 2025",
       title: "REGISTRATION CLOSES",
       description: "Last chance to register! Registration closes today. Make sure you've submitted your team details and are ready for the hackathon!",
       icon: "⏰",
-      color: "bg-green-600",
-      bgColor: "bg-green-200",
-      status: "completed"
+      color: "bg-red-500",
+      bgColor: "bg-red-50",
+      status: "upcoming"
     },
     {
-      date: "20 SEP, 2024",
-      title: "HACKING BEGINS",
-      description: "The main event starts! 24 hours of intense coding, innovation, and creativity. Teams will work together to build amazing projects and compete for prizes!",
+      date: "4 OCT, 2025 - 8:00 AM",
+      title: "STUDENT REGISTRATION BEGINS",
+      description: "Event day starts! Student registration and check-in begins. Get your badges and prepare for an amazing hackathon experience!",
+      icon: "📝",
+      color: "bg-blue-500",
+      bgColor: "bg-blue-50",
+      status: "upcoming"
+    },
+    {
+      date: "4 OCT, 2025 - 10:00 AM",
+      title: "FACILITATION & WORKSHOP",
+      description: "Join our facilitation session and workshop to get familiar with the hackathon format, rules, and meet fellow participants!",
+      icon: "🎓",
+      color: "bg-purple-500",
+      bgColor: "bg-purple-50",
+      status: "upcoming"
+    },
+    {
+      date: "4 OCT, 2025 - 12:00 PM",
+      title: "HACKATHON STARTS",
+      description: "The main event begins! 24 hours of intense coding, innovation, and creativity. Teams will work together to build amazing projects!",
       icon: "🚀",
-      color: "bg-green-700",
-      bgColor: "bg-green-300",
+      color: "bg-green-600",
+      bgColor: "bg-green-100",
       highlight: true,
       status: "main_event"
     },
+    {
+      date: "4 OCT, 2025 - 10:00 PM",
+      title: "JAMMING SESSION",
+      description: "Take a break from coding and join our jamming session! Network with other participants and enjoy some refreshments.",
+      icon: "🎵",
+      color: "bg-orange-500",
+      bgColor: "bg-orange-50",
+      status: "upcoming"
+    },
+    {
+      date: "5 OCT, 2025 - 12:00 PM",
+      title: "HACKATHON ENDS",
+      description: "Time's up! Submit your final projects and prepare for the presentation phase. 24 hours of innovation comes to an end!",
+      icon: "⏱️",
+      color: "bg-red-600",
+      bgColor: "bg-red-100",
+      status: "upcoming"
+    },
+    {
+      date: "5 OCT, 2025 - 2:00 PM",
+      title: "RESULTS ANNOUNCED",
+      description: "The moment everyone's been waiting for! Winners will be announced and prizes will be distributed. Congratulations to all participants!",
+      icon: "🏆",
+      color: "bg-yellow-500",
+      bgColor: "bg-yellow-50",
+      highlight: true,
+      status: "upcoming"
+    }
   ];
 
   return (
