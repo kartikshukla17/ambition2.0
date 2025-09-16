@@ -65,9 +65,9 @@ const TimeLine = () => {
       status: "upcoming"
     },
     {
-      date: "4 OCT, 2025 - 12:00 PM",
-      title: "HACKATHON STARTS",
-      description: "The main event begins! 24 hours of intense coding, innovation, and creativity. Teams will work together to build amazing projects!",
+      date: "20 SEP, 2024",
+      title: "HACKING BEGINS",
+      description: "The main event starts! 24 hours of intense coding, innovation, and creativity. Teams will work together to build amazing projects and compete for prizes!",
       icon: "🚀",
       color: "bg-green-600",
       bgColor: "bg-green-100",
