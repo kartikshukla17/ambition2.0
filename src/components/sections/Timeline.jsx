@@ -38,7 +38,7 @@ const TimeLine = () => {
   
   const events = [
     {
-      date: "2 OCT, 2025",
+      date: "26 Sept, 2025",
       title: "REGISTRATION CLOSES",
       description: "Last chance to register! Registration closes today. Make sure you've submitted your team details and are ready for the hackathon!",
       icon: "⏰",
