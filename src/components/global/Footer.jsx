@@ -73,19 +73,87 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Enhanced COPYRIGHT */}
-      <div className="mt-8 sm:mt-12 lg:mt-16 text-center relative z-10 px-4">
-        <div className="flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 mb-3 sm:mb-4">
-          <div className="w-4 sm:w-6 lg:w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-400"></div>
-          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-          <div className="w-8 sm:w-12 lg:w-16 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"></div>
-          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full"></div>
-          <div className="w-4 sm:w-6 lg:w-8 h-0.5 bg-gradient-to-r from-pink-400 to-transparent"></div>
+      {/* FOOTER BOTTOM SECTION - Contains Social Media and Copyright */}
+      <div className="mt-8 sm:mt-12 lg:mt-16 text-center relative z-10 px-4 max-w-4xl mx-auto overflow-hidden">
+        {/* SOCIAL MEDIA LINKS CONTAINER */}
+        <div className="bg-white/70 dark:bg-gray-800/70 p-3 sm:p-4 lg:p-6 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl border-2 sm:border-3 border-black backdrop-blur-sm mb-6 sm:mb-8 overflow-hidden w-full">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+            <h4 className="text-lg sm:text-xl lg:text-2xl font-black uppercase text-black dark:text-white">CONNECT WITH US</h4>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+          </div>
+          
+          {/* SOCIAL MEDIA LINKS WRAPPER */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 lg:gap-4 overflow-hidden w-full">
+            {/* Instagram Link */}
+            <a 
+              href="https://www.instagram.com/ambition_v2?igsh=MW51NGt4d2FiYXRtcQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-800 dark:to-purple-800 px-2 sm:px-3 py-2 rounded-lg border-2 border-pink-300 dark:border-pink-600 hover:border-pink-500 dark:hover:border-pink-400 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg w-full sm:w-auto sm:min-w-[140px] sm:max-w-[160px] flex-shrink-0 overflow-hidden"
+            >
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm group-hover:animate-pulse flex-shrink-0">
+                📷
+              </div>
+              <div className="text-left overflow-hidden min-w-0 flex-1">
+                <p className="font-black text-xs text-black dark:text-white truncate">Instagram</p>
+                <p className="text-xs text-gray-600 dark:text-gray-300 truncate">@ambition_v2</p>
+              </div>
+            </a>
+
+            {/* Email Link */}
+            <a 
+              href="mailto:ambitiontwenty24@gmail.com"
+              className="group flex items-center gap-2 bg-gradient-to-r from-blue-100 to-green-100 dark:from-blue-800 dark:to-green-800 px-2 sm:px-3 py-2 rounded-lg border-2 border-blue-300 dark:border-blue-600 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg w-full sm:w-auto sm:min-w-[140px] sm:max-w-[160px] flex-shrink-0 overflow-hidden"
+            >
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-blue-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm group-hover:animate-pulse flex-shrink-0">
+                ✉️
+              </div>
+              <div className="text-left overflow-hidden min-w-0 flex-1">
+                <p className="font-black text-xs text-black dark:text-white truncate">Email</p>
+                <p className="text-xs text-gray-600 dark:text-gray-300 truncate">ambitiontwenty24@gmail.com</p>
+              </div>
+            </a>
+
+            {/* WhatsApp Link */}
+            <a 
+              href="https://wa.me/919620247096"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 bg-gradient-to-r from-green-100 to-yellow-100 dark:from-green-800 dark:to-yellow-800 px-2 sm:px-3 py-2 rounded-lg border-2 border-green-300 dark:border-green-600 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg w-full sm:w-auto sm:min-w-[140px] sm:max-w-[160px] flex-shrink-0 overflow-hidden"
+            >
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-green-500 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm group-hover:animate-pulse flex-shrink-0">
+                📱
+              </div>
+              <div className="text-left overflow-hidden min-w-0 flex-1">
+                <p className="font-black text-xs text-black dark:text-white truncate">WhatsApp</p>
+                <p className="text-xs text-gray-600 dark:text-gray-300 truncate">+91 96202 47096</p>
+              </div>
+            </a>
+          </div>
+
+          {/* Decorative line */}
+          <div className="flex items-center justify-center mt-6 sm:mt-8">
+            <span className="w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-br from-pink-400 to-purple-500 transform rotate-45 shadow-lg border-1 border-black" />
+            <span className="w-16 sm:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 mx-2 sm:mx-3 rounded-full shadow-md" />
+            <span className="w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-br from-blue-400 to-green-500 transform rotate-45 shadow-lg border-1 border-black" />
+          </div>
         </div>
-        <div className="bg-white/50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full border-2 border-purple-300 dark:border-purple-600 backdrop-blur-sm inline-block">
-          <p className="text-xs sm:text-sm font-bold text-black dark:text-white">
-            © {new Date().getFullYear()}, All rights reserved • Made with ❤️ for amBITion
-          </p>
+
+        {/* COPYRIGHT SECTION - Contained within the footer bottom section */}
+        <div className="copyright-container w-full overflow-hidden">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 lg:gap-4 mb-3 sm:mb-4 overflow-hidden">
+            <div className="w-4 sm:w-6 lg:w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-400 flex-shrink-0"></div>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex-shrink-0"></div>
+            <div className="w-8 sm:w-12 lg:w-16 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 flex-shrink-0"></div>
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full flex-shrink-0"></div>
+            <div className="w-4 sm:w-6 lg:w-8 h-0.5 bg-gradient-to-r from-pink-400 to-transparent flex-shrink-0"></div>
+          </div>
+          <div className="bg-white/50 dark:bg-gray-800/50 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full border-2 border-purple-300 dark:border-purple-600 backdrop-blur-sm inline-block max-w-full overflow-hidden">
+            <p className="text-xs sm:text-sm font-bold text-black dark:text-white truncate">
+              © {new Date().getFullYear()}, All rights reserved • Made with ❤️ for amBITion
+            </p>
+          </div>
         </div>
       </div>
     </footer>
