@@ -126,7 +126,7 @@ const TimeLine = () => {
         
         <div className="relative max-w-4xl mx-auto px-4">
           {/* Interactive Navigation Dots */}
-          <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-30 hidden lg:block">
+          {/* <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-30 hidden lg:block">
             <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-green-200 dark:border-green-600">
               {events.map((_, index) => (
                 <button
@@ -141,7 +141,7 @@ const TimeLine = () => {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
           
           {/* Enhanced Vertical Line with gradient and decorative elements - hidden on mobile */}
           <div className="absolute left-1/2 w-1 transform -translate-x-1/2 hidden md:block" style={{height: 'calc(100% - 200px)'}}>
