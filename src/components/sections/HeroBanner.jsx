@@ -1,8 +1,11 @@
 "use client";
 import Button from "@/components/global/Button";
 import Countdown from "@/components/elements/Countdown";
+import { useRouter } from 'next/navigation';
 
 const HeroBanner = () => {
+  const router = useRouter();
+  
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
 
@@ -60,13 +63,13 @@ const HeroBanner = () => {
       {/* Register Button */}
 
       <div className="mb-12 z-10">
-        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => { window.open("https://tally.so/r/wgBdR1", "_blank") }}>
+        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => router.push('/registration-closed')}>
           Register
         </Button>
       </div>
       {/* Countdown Timer */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl px-2 sm:px-6 md:px-12 py-4 sm:py-6 md:py-8 shadow-2xl border-2 border-gray-200 dark:border-gray-600 z-10 max-w-sm sm:max-w-2xl md:max-w-4xl mx-2 sm:mx-4 w-full">
-        <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-black dark:text-white text-center">Time left to Register</h3>
+        <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-black dark:text-white text-center">Time left for Hackathon</h3>
         <Countdown targetDate="2025-10-04T09:59:59" />
         {/* Dots below countdown */}
         <div className="flex justify-center gap-2 mt-4 sm:mt-6">

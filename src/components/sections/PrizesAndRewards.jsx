@@ -1,11 +1,14 @@
 "use client"
 
 import React from "react";
+import { useRouter } from 'next/navigation';
 import SectionTitle from "@/components/global/SectionTitle";
 import Card from "@/components/global/Card";
 import { FiGift, FiStar, FiCoffee, FiBriefcase, FiTrophy, FiDollarSign } from "react-icons/fi";
 
 const PrizesAndRewards = () => {
+  const router = useRouter();
+  
   const prizes = [
     {
       title: "🥇 First Place",
@@ -168,7 +171,7 @@ const PrizesAndRewards = () => {
         <div className="text-center mt-8 sm:mt-12 lg:mt-16 px-4">
           <div 
             className="inline-block bg-green-600 text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-xl sm:shadow-2xl border-2 sm:border-4 border-black transform rotate-1 hover:rotate-0 transition-transform duration-300 min-h-[48px] flex items-center justify-center cursor-pointer hover:bg-green-700 active:scale-95"
-            onClick={() => window.open('https://tally.so/r/wgBdR1', '_blank')}
+            onClick={() => router.push('/registration-closed')}
           >
             🚀 Ready to Win Big? Register Now!
           </div>
