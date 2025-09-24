@@ -48,7 +48,7 @@ export default function RegistrationClosed() {
           {/* Message */}
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p className="text-lg sm:text-xl leading-relaxed">
-              Registration is now closed. Thank you for your overwhelming response - we have exceeded our accommodation capacity.(Bahut Jadaaa!!)
+              Registration is now closed. Thank you for your overwhelming response - we have exceeded our accommodation capacity.
             </p>
             <p className="text-base sm:text-lg">
               We sincerely appreciate your interest.
