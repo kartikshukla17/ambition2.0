@@ -60,10 +60,21 @@ const HeroBanner = () => {
         </div>
       </div>
 
-      {/* Register Button */}
+      {/* Registration Message */}
+      <div className="mb-6 z-10 max-w-4xl mx-auto px-4">
+        <div 
+          className="bg-red-500 dark:bg-red-600 px-6 sm:px-8 py-4 sm:py-6 transform rotate-1 shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black dark:border-white rounded-lg cursor-pointer hover:scale-105 active:scale-95"
+          onClick={() => window.open('https://tally.so/r/3E97Nl', '_blank')}
+        >
+          <p className="text-center text-white dark:text-white font-black text-sm sm:text-base md:text-lg leading-relaxed tracking-wide">
+            Registrations for offline participation are closed. You can still join the online hackathon - same fun, same enthusiasm, same energy!
+          </p>
+        </div>
+      </div>
 
+      {/* Register Button */}
       <div className="mb-12 z-10">
-        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => router.push('/registration-closed')}>
+        <Button className="bg-cyan-400 hover:bg-cyan-500 px-12 py-4 text-2xl font-black text-black shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] transition-all duration-200 border-4 border-black transform hover:scale-105" onClick={() => window.open('https://tally.so/r/3E97Nl', '_blank')}>
           Register
         </Button>
       </div>
